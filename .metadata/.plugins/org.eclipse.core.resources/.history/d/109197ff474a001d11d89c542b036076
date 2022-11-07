@@ -1,0 +1,39 @@
+package com.niv.security.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
+
+	@Autowired
+	BCryptPasswordEncoder passEncoder;
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+			.csrf().disable()
+			.authorizeRequests()
+			.antMatchers("/hello")
+			.authenticated()
+			.and()
+			.httpBasic();
+	}
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+			.withUser("Nivrutti").password(passEncoder.encode("Nivrutti")).authorities("ROLE_ADMIN");
+	}
+	
+//	@Bean
+//	public BCryptPasswordEncoder passEncoder() {
+//		return new BCryptPasswordEncoder();
+//	}
+	
+}

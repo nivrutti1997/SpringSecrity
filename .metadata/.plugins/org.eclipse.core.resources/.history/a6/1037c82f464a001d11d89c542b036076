@@ -1,0 +1,5 @@
+package com.niv.security.entities;
+
+public class Authorities {
+
+}

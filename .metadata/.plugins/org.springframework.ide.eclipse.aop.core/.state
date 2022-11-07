@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringBoot-Security-Oauth2"/>
+<aop-project name="Spring-Section-2"/>
+<aop-project name="Spring-Section-3"/>
+<aop-project name="Spring-Security-Basics"/>
+<aop-project name="SpringBootSecurityJWTDemo"/>
+<aop-project name="Oauth2-example"/>
+<aop-project name="Spring-JDBC-Authentication"/>
+<aop-project name="SpringBootSecurityJwt"/>
+<aop-project name="23-SB-JWT"/>
+</aop-reference-model>

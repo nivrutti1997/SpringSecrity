@@ -1,0 +1,5 @@
+package com.niv.security.api;
+
+public class SecurityConfig {
+
+}
